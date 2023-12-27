@@ -1,26 +1,19 @@
 require 'jekyll_plugin_support'
-require_relative 'jekyll_google_translate/version.rb'
+require_relative 'jekyll_google_translate/version'
 
-# This Jekyll tag plugin is a minimal example.
-#
-# See https://www.mslinn.com/jekyll/10200-jekyll-plugin-background.html
-# See https://www.mslinn.com/jekyll/10400-jekyll-plugin-template-collection.html
-#
-# @example Heading for this example
-#   {% google_translate param1='value1' %}
+# This Jekyll tag plugin inserts HTML for Google Translate.
+# The {% google_translate_javascript %} tag must also be called to insert JavaScript into the page.
 #
 # The Jekyll log level defaults to :info, which means all the Jekyll.logger statements below will not generate output.
 # You can control the log level when you start Jekyll.
 # To set the log level to :debug, write an entry into _config.yml, like this:
 # plugin_loggers:
-#   GoogleTranslate: debug
+#   GoogleTranslateHtml: debug
 module JekyllGoogleTranslate
-  # This class implements the Jekyll google_translate functionality
-  class GoogleTranslate < JekyllSupport::JekyllTag
-    PLUGIN_NAME = 'google_translate'.freeze
+  class GoogleTranslateHtml < JekyllSupport::JekyllTag
+    PLUGIN_NAME = 'google_translate_html'.freeze
     VERSION = JekyllGoogleTranslate::VERSION
 
-    # Put your plugin logic here.
     # The following variables are predefined:
     #   @argument_string, @config, @envs, @helper, @layout, @logger, @mode, @page, @paginator, @site, @tag_name and @theme
     #
@@ -29,12 +22,8 @@ module JekyllGoogleTranslate
     # @param tokens [Liquid::ParseContext] tokenized command line
     # @return [void]
     def render_impl
-      
       <<~END_OUTPUT
-        <pre class="example">
-          
-          Remaining markup: '#{@helper.remaining_markup}'.
-        </pre>
+        <div id="google_translate_element"></div>
       END_OUTPUT
     end
 

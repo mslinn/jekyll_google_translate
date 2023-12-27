@@ -1,6 +1,6 @@
 # `Jekyll_google_translate` [![Gem Version](https://badge.fury.io/rb/jekyll_google_translate.svg)](https://badge.fury.io/rb/jekyll_google_translate)
 
-Description of JekyllGoogleTranslate
+Adds Google Translate to a web page.
 
 
 ## Installation
@@ -22,7 +22,21 @@ $ bundle
 
 ## Usage
 
-Describe how to use this gem
+The {% google_translate_html %} tag must be called to insert HTML into the page,
+then the {% google_translate_javascript %} tag must be called to insert Javascript into the page.
+For example:
+
+```html
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <body>
+    <nav id="sidebar">
+      {% google_translate_html %}
+    </nav>
+  </body>
+  {% google_translate_javascript %}
+</html>
+```
 
 
 ## Development

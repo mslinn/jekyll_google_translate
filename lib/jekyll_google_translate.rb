@@ -8,5 +8,3 @@ require_relative 'jekyll_google_translate/version'
 Dir[File.join(__dir__, '*.rb')].each do |file|
   require file unless file.end_with?('/jekyll_google_translate.rb')
 end
-
-# Write the code for your gem here
