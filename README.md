@@ -19,6 +19,9 @@ And then execute:
 $ bundle
 ```
 
+Copy `demo/assets/css/jekyll_google_translate.css` to your Jekyll web site's CSS directory,
+and update your layout accordingly.
+
 
 ## Usage
 
@@ -29,6 +32,10 @@ For example:
 ```html
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: nowMillis }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/jekyll_google_translate.css?v=' | append: nowMillis }}" type="text/css">
+  </head>
   <body>
     <nav id="sidebar">
       {% google_translate_html %}
@@ -37,6 +44,8 @@ For example:
   {% google_translate_javascript %}
 </html>
 ```
+
+The above is usually incorporated into a layout, for example, `_layouts/default.html`.
 
 
 ## Development
