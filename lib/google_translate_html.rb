@@ -10,7 +10,7 @@ require_relative 'jekyll_google_translate/version'
 # plugin_loggers:
 #   GoogleTranslateHtml: debug
 module JekyllGoogleTranslate
-  class GoogleTranslateHtml < JekyllSupport::JekyllTag
+  class GoogleTranslateHtml < ::JekyllSupport::JekyllTag
     PLUGIN_NAME = 'google_translate_html'.freeze
     VERSION = JekyllGoogleTranslate::VERSION
 
@@ -27,6 +27,6 @@ module JekyllGoogleTranslate
       END_OUTPUT
     end
 
-    JekyllPluginHelper.register(self, PLUGIN_NAME)
+    ::JekyllSupport::JekyllPluginHelper.register(self, PLUGIN_NAME)
   end
 end
