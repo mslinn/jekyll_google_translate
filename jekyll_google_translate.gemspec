@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.summary               = 'Write summary of what the gem is for'
   spec.version               = JekyllGoogleTranslate::VERSION
   spec.add_dependency 'jekyll', '>= 3.5.0'
-  spec.add_dependency 'jekyll_plugin_support', '>= 0.7.0'
+  spec.add_dependency 'jekyll_plugin_support', '>= 1.0.0'
 end
