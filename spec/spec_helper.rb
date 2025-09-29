@@ -3,7 +3,7 @@ require 'jekyll_plugin_logger'
 require 'liquid'
 require 'fileutils'
 require 'yaml'
-require_relative '../lib/<%= @gem_name %>'
+require_relative '../lib/jekyll_google_translate'
 
 RSpec.configure do |config|
   config.filter_run :focus
@@ -16,7 +16,7 @@ RSpec.configure do |config|
   config.filter_run_when_matching focus: true
 end
 
-Registers = Struct.new(:page, :site)
+Registers = Struct.new(:page, :site) unless defined?(Registers)
 
 # Mock for Collections
 class Collections
